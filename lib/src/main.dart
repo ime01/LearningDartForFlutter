@@ -37,14 +37,41 @@ main(){
   //Dart Conditional Statement
   conditionalStatement(){
 
-    String color = 'BLUE';
+    String color = 'YELLOW';
 
     if(color == 'RED'){
       print('Color is Red');
-    }else{
-      print('Color is not Red');
+    }else if(color == 'BLUE'){
+      print('Color is BLUE');
+    }else if(color == 'GREEN'){
+      print('color is GREEN');
+    }else {
+      print('Invalid Color');
     }
+
+//    Switch
+  switch(color){
+
+    case 'RED':
+      print('Color is RED');
+      break;
+
+    case 'BLUE':
+      print('Color is BLUE');
+      break;
+
+    case 'GREEN':
+      print('color is GREEN');
+      break;
+
+      default:
+        print('Invalid Color1');
+
   }
+
+
+  }
+
 
   //Dart Conditional Expression
   conditionalExpression(){
@@ -63,6 +90,56 @@ main(){
 
   }
 
+//  Loops in Dart
+  dartLoops() {
+    var cars = 3;
+    var i = 1;
+
+//    while (i < 11) {
+//      if(i == 5){
+//        i++;
+//        continue;
+//      }
+////        break;
+//      print("$cars x $i = ${cars * i}");
+//      i++;
+//    }
+
+//    do{
+//      print("$cars x $i = ${cars * i}");
+//    }while(i<11);
+
+
+     for(var bikes = 1; bikes<11; bikes++ ){
+       print("$cars x $i = ${cars * bikes}");
+     }
+  }
+
+//  Arrays in Dart
+  dartList(){
+    List names = [ 'Fred', 'Mike', for(var i = 1; i<6; i++)'Jerry $i',  if(fullName == "Jack Bauer")'Best'];
+
+//    Un modifiable List
+    List name = const[ 'Fred', 'Mike', 'Jerry', 'Best'];
+
+    names.add('Steve');
+    names.removeAt(1);
+    names.remove('Fred');
+    print(names);
+
+//    Insert list into new List
+    var names1 = ['Peter', ...?names];
+
+
+    for(var person in names){
+      print(person);
+    }
+  }
+
+
+
+
+
 
 
   print(marks);
@@ -74,5 +151,7 @@ main(){
   printSquare();
   print(conditionalStatement());
   print(conditionalExpression());
+  print(dartLoops());
+  print(dartList());
 
 }
