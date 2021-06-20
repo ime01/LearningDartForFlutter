@@ -136,6 +136,62 @@ main(){
     }
   }
 
+//  Sets in Dart
+  dartSets(){
+
+    var names = {
+      'John',
+      'Peter',
+      'Tony',
+      'Mike',
+    };
+
+//    empty Sets
+    var names1 = <String>{};
+
+    var names2 = <String>{
+      'A',
+      'B',
+      'C',
+      'D',
+      if(true)'D',
+      for(var i = 0; i<5; i++) 'D $i' };
+
+//    Create new set and add old set
+    var names3 = {'1', '2', '3', ...?names2};
+
+    for (var name in names3){
+      print(name);
+    }
+
+    print(names3);
+  }
+
+//  Map in Dart
+
+  dartMaps(){
+
+    var users = {
+
+      'John':1,
+      'Fred':2,
+      'Jake':3,
+      'Tony':4,
+    };
+
+//    Empty Maps
+    var names = <int, String>{};
+    names[1] = 'Victor';
+    names[2] = 'James';
+    names[3] = 'Mathew';
+    names.remove(2);
+
+    print(users['John']);
+    print(users[1]);
+    print(names);
+
+  }
+
 
 
 
@@ -153,5 +209,7 @@ main(){
   print(conditionalExpression());
   print(dartLoops());
   print(dartList());
+  print(dartSets());
+  print(dartMaps());
 
 }
