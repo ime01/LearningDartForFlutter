@@ -192,7 +192,85 @@ main(){
 
   }
 
+//  Function parameters in dart
+//  optional positional parameters
+//  named parameters
+//  named parameters are by default optional
 
+  showStudent({required int? id, required String? name, int age: 15, String? dob,}){
+
+    print("id: $id");
+    print("name: $name");
+    print("age: $age");
+    print("dob: $dob");
+  }
+
+  showStudent1([String? name = "No Name"]){
+
+  }
+
+//  Higher order functions and Lamba in Dart
+
+  void getSum(List<int> numbers, Function result){
+
+    var sum = 0;
+    for(var i = 0; i<numbers.length; i++){
+      sum+=numbers[i];
+    }
+
+    result(sum);
+  }
+
+  higherOrderFunctions(){
+
+    var nums = [2, 2, 4, 4];
+
+//    Function f1 = (int sum) => print(sum);
+//    if more than one statement use normal function signature as below
+    Function f1 = (int sum) {
+      print("Sum is:");
+      print(sum);
+    };
+
+//    Using var here is same as Function keyword
+//    var f1 = (int sum) => print(sum);
+
+    getSum(nums, f1);
+  }
+
+//  Funtion that returns a function
+
+  Function myFunc(){
+    return () => print("My Function is Called");
+//    return () {
+//      print("My Function is Called");
+//      print("My Function is Called Again");
+//    };
+  }
+
+//  DYNAMIC TYPE IN DART ARE VARIABLES THAT CAN CHANGE TYPE EG FROM INT TO STRING
+  dartDynamicType(){
+
+    dynamic name = ' Victor';
+    name = 45;
+    print(name);
+
+//    getting values from a Dart Class
+
+//    User user1 = User('Markus', 1050);
+//    User user2 = User('Catalyna', 950);
+    var user = User();
+
+    var age = user.age;
+
+    print(age);
+//    print(userOne.login());
+
+  SuperUser user3 = SuperUser();
+  print(user3.username);
+//  print(user3.publish());
+
+  }
 
 
 
@@ -211,5 +289,36 @@ main(){
   print(dartList());
   print(dartSets());
   print(dartMaps());
+//  print(showStudent(3, "Jackson", age: 23));
+  print(showStudent(id : 1, name: "Jackson", age: 23, dob: "30/04/1999"));
+  print(higherOrderFunctions());
+  print(myFunc()());
+  print(dartDynamicType());
+
+}
+
+//  Classes in Dart
+
+class User{
+
+  String username = 'Bucky';
+  int age = 150;
+
+
+//  class constructor
+//  User(String username, int age){
+//
+//  };
+
+   void login(){
+   return print('user logged in');
+  }
+}
+
+class SuperUser extends User{
+
+  void publish(){
+    print('published update');
+  }
 
 }
